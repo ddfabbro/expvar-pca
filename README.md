@@ -1,4 +1,5 @@
-# extended-pca
+# expvar-pca
+
 Extension of PCA class from `scikit-learn` to fit data according to given explained variance
 
 ## Installation
@@ -8,23 +9,23 @@ There is no installation for this package.
 To use it, simply clone this repository by
 
 ```
-git clone https://github.com/ddfabbro/extended-pca.git
+git clone https://github.com/ddfabbro/expvar-pca.git
 ```
 
 and add the root directory to your `PYTHONPATH` environment variable
 
 ```
-export PYTHONPATH=$PYTHONPATH:$(pwd)/extended-pca
+export PYTHONPATH=$PYTHONPATH:$(pwd)/expvar-pca
 ```
 
 Alternatively, you can drop the source code directory in your project and use it directly.
 
 ## Usage
 
-Import `numpy` and `ExtendedPCA`
+Import `numpy` and `expvarpca`
 ```
 import numpy as np
-from ExtendedPCA import PCA
+from expvarpca import PCA
 ```
 Initialize random data `X` and specify target explained variance `target_exp_var`
 ```
