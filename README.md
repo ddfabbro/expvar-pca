@@ -1,6 +1,6 @@
 # expvar-pca
 
-Extension of PCA class from `scikit-learn` to fit data according to given explained variance
+Extension of PCA class from `scikit-learn` to fit data according to target explained variance
 
 ## Installation
 
@@ -22,22 +22,26 @@ Alternatively, you can drop the source code directory in your project and use it
 
 ## Usage
 
-Import `numpy` and `expvarpca`
+Import `numpy` and `PCA`
 ```
 import numpy as np
 from expvarpca import PCA
+```
+Initialize PCA as you would normally do using `scikit-learn`
+```
+pca = PCA(whiten=True,svd_solver='randomized')
 ```
 Initialize random data `X` and specify target explained variance `target_exp_var`
 ```
 X = np.random.rand(64,27)
 target_exp_var = .8
 ```
-Calculate PCA as you would normally do using `scikit-learn`
+Fit the model with `X` according to target explained variance
 ```
-pca = PCA(whiten=True,svd_solver='randomized').fit_exp_var(X,target_exp_var)
+pca.fit_exp_var(X,target_exp_var)
 ```
 (optional) You can also specify search bounds for faster convergence
 ```
 bounds = [10,20]
-pca = PCA(whiten=True,svd_solver='randomized').fit_exp_var(X,target_exp_var,bounds)
+pca.fit_exp_var(X,target_exp_var,bounds)
 ```
